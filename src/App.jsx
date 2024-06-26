@@ -1,14 +1,12 @@
+import Header from "./components/Header";
 function App() {
   return (
-    <>
-     <header>
-      <h3></h3>
-      <p>Dark Mode</p>
-     </header>
+    <div className="w-full py-3">
+     <Header/>
      <main>
       Countries Cards
      </main>
-    </>
+    </div>
   )
 }
 
