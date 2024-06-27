@@ -1,5 +1,8 @@
+import { useEffect } from "react";
 import Header from "./components/Header";
+import Data from "./components/Data";
 function App() {
+
   return (
     <div className="w-full ">
      <Header/>
@@ -8,7 +11,7 @@ function App() {
        search bar
      </div>
      <div>
-        countries cards
+        <Data/>
      </div>
      </main>
     </div>
