@@ -1,12 +1,18 @@
+import { createContext } from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 
-export default function Data() {
+//context created
+export const CountryContext = createContext();
+
+//provider componenet created
+export default function CountryProvider({children}) {
 
    const [countries, setCountries] = useState([]);
    const [loading, setLoading] = useState(true);
    const [error, setError] = useState(null);
 
+   //API fetch data
     useEffect(()=> {
         fetch('https://restcountries.com/v3.1/all')
         .then(response => {
@@ -19,22 +25,20 @@ export default function Data() {
             setCountries(data);
             setLoading(false);
         })
-        .catch(error => {
-            setError(error);
+        .catch(err => {
+            setError(err);
             setLoading(false);
         });
     }, []);
 
-    if(loading) return <div>Loading...</div>
-    if (error) return <div>Error: {error.message}</div>
+    // if(loading) return <div>Loading...</div>
+    // if (error) return <div>Error: {error.message}</div>
 
-    console.log(countries[0]);
+    console.log(countries.map((country) => country.name.official));
     
   return (
-    <ul>
-        {countries.map((country) => {
-            <li key={country.name.official}>{country.name.common}</li>
-        })}
-    </ul>
+    <CountryContext.Provider value={{countries, loading, error}}>
+        {children}
+    </CountryContext.Provider>
   )
 }
