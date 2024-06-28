@@ -12,7 +12,7 @@ function App() {
           search bar
         </div>
         <CountryProvider>
-          <div className="bg-stone-500 px-16 my-6 h-auto gap-12 flex flex-wrap justify-between py-8">
+          <div className="px-16 my-6 h-auto gap-12 flex flex-wrap justify-between py-8">
             <CountryList/>
           </div>
         </CountryProvider>
