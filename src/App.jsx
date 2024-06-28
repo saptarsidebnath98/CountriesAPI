@@ -12,7 +12,7 @@ function App() {
   }
 
   return (
-    <div className="w-full font-nunito">
+    <div className="w-full font-nunito flex flex-col gap-1 ">
       <Header darkMode={darkMode} handleMode={handleMode}/>
       <main className={`flex flex-col ${darkMode ? 'bg-slate-800' : 'bg-white'}`}>
         <CountryProvider darkMode={darkMode}>
