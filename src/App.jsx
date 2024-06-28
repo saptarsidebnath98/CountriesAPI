@@ -14,12 +14,9 @@ function App() {
   return (
     <div className="w-full font-nunito">
       <Header darkMode={darkMode} handleMode={handleMode}/>
-      <main className={`flex flex-col`}>
-        <div>
-          search bar
-        </div>
-        <CountryProvider>
-            <CountryList/>
+      <main className={`flex flex-col ${darkMode ? 'bg-slate-800' : 'bg-white'}`}>
+        <CountryProvider darkMode={darkMode}>
+            <CountryList darkMode={darkMode}/>
         </CountryProvider>
       </main>
     </div>

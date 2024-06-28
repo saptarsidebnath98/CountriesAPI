@@ -37,7 +37,7 @@ export default function CountryProvider({children, darkMode}) {
     console.log(countries.map((country) => country.name.official));
     
   return (
-    <CountryContext.Provider value={{countries, loading, error}}>
+    <CountryContext.Provider value={{countries, loading, error, darkMode}}>
         {children}
     </CountryContext.Provider>
   )
