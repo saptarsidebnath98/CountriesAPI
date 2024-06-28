@@ -6,7 +6,7 @@ import { useState } from "react";
 export const CountryContext = createContext();
 
 //provider componenet created
-export default function CountryProvider({children}) {
+export default function CountryProvider({children, darkMode}) {
 
    const [countries, setCountries] = useState([]);
    const [loading, setLoading] = useState(true);
